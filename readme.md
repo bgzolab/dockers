@@ -41,8 +41,11 @@ sudo docker-compose -f ./docker-compose.yml --env-file .env down
 ## Thanks following repos
 
 - [🐋 Awesome TTRSS | 🐋 Awesome TTRSS](http://ttrss.henry.wang/zh/#%E5%85%B3%E4%BA%8E)
+- [Free and open source comics/mangas media server | Komga](https://komga.org/)
+- [Embyserver - Docker](https://hub.docker.com/r/emby/embyserver)
 
 ## Referencens
 
 - [docker 设置代理，以及国内加速镜像设置-次世代BUG池](https://neucrack.com/p/286)
 - [Docker的三种网络代理配置 · 零壹軒·笔记](https://note.qidong.name/2020/05/docker-proxy/)
+- [基于Emby搭建媒体服务器 | Tomoya's Blog](https://tomoyadeng.github.io/blog/2019/03/12/building-a-media-server-based-on-emby/index.html)
