@@ -1,0 +1,13 @@
+.env
+
+# TTRSS
+ttrss/postgres/data/
+
+# Komga
+komga/data
+komga/config
+
+# Emby
+emby/config
+emby/share1
+emby/share2
