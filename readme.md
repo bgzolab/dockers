@@ -38,6 +38,15 @@ sudo docker-compose -f ./docker-compose.yml --env-file .env rm
 sudo docker-compose -f ./docker-compose.yml --env-file .env down
 ```
 
+## Notices
+
+- Emby mount volume drive needs `w` permission, otherwise it not works. So some settings are required:
+
+```shell
+# Origin permission: drwxr-xr-x
+chmod 777 -R $HOME/Music && chmod 777 -R $HOME/Videos
+```
+
 ## Thanks following repos
 
 - [🐋 Awesome TTRSS | 🐋 Awesome TTRSS](http://ttrss.henry.wang/zh/#%E5%85%B3%E4%BA%8E)

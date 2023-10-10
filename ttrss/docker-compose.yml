@@ -9,7 +9,7 @@ services:
     environment:
       - SELF_URL_PATH=http://${LAN}:181/
       - HTTP_PROXY=${PROXY}
-      - DB_PASS=${PASSWORD}
+      - DB_PASS=${TTRSS_PASSWORD}
       - PUID=1000
       - PGID=1000
     volumes:
@@ -43,7 +43,7 @@ services:
     image: postgres:13-alpine
     container_name: postgres
     environment:
-      - POSTGRES_PASSWORD=${PASSWORD}
+      - POSTGRES_PASSWORD=${TTRSS_PASSWORD}
     volumes:
       - ${WORKSPACE}/ttrss/postgres/data/:/var/lib/postgresql/data 
       # NOTE: Persist Config Here!
