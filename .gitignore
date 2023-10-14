@@ -4,8 +4,16 @@
 ttrss/postgres/data/
 
 # Komga
-komga/data
 komga/config
 
 # Emby
-emby/config
+emby/.git/
+emby/README.md
+emby/working.jpg
+emby/embyhack/config
+emby/embyhack/nginx
+emby/embyhack/thumbnails
+emby/embyhack/ca-certificates.crt
+emby/embyhack/crypto.js
+emby/embyhack/emby-ca-certificates.crt
+
