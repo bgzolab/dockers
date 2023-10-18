@@ -1,0 +1,20 @@
+version: "2"
+services:
+  qbittorrent:
+    image: superng6/qbittorrent
+    container_name: qbittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+      - http_proxy=${PROXY}
+      - https_proxy=${PROXY}
+      - all_proxy=${PROXY}
+    volumes:
+      - ./config:/config
+      - ${VIDEOS}/Bangumi:/downloads
+    ports:
+      - 6881:6881
+      - 6881:6881/udp
+      - 7070:8080
+    restart: unless-stopped

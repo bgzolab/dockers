@@ -6,14 +6,21 @@ ttrss/postgres/data/
 # Komga
 komga/config
 
-# Emby
-emby/.git/
-emby/README.md
-emby/working.jpg
-emby/embyhack/config
-emby/embyhack/nginx
-emby/embyhack/thumbnails
-emby/embyhack/ca-certificates.crt
-emby/embyhack/crypto.js
-emby/embyhack/emby-ca-certificates.crt
+# docker-embyhack
+docker-embyhack/.git/
+docker-embyhack/README.md
+docker-embyhack/working.jpg
+docker-embyhack/embyhack/config
+docker-embyhack/embyhack/nginx
+docker-embyhack/embyhack/thumbnails
+docker-embyhack/embyhack/ca-certificates.crt
+docker-embyhack/embyhack/crypto.js
+docker-embyhack/embyhack/docker-embyhack-ca-certificates.crt
+docker-embyhack/embyhack/emby-ca-certificates.crt
+docker-embyhack/embyhack/nginx.archive
 
+#AList
+alist/list/
+
+#qbittorrent
+qbittorrent/config

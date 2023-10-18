@@ -23,16 +23,19 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
+      - GIDLIST=985 # grep video /etc/group 
       - TZ=Asia/Shanghai
       - NVIDIA_VISIBLE_DEVICES=all
-      - http_proxy=${PROXY}
-      - https_proxy=${PROXY}
-      - all_proxy=${PROXY}
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      #- http_proxy=${PROXY}
+      #- https_proxy=${PROXY}
+      #- all_proxy=${PROXY}
     volumes:
       - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt                # 将添加了 伪造CA证书 的信任列表，替换到容器内
       - ./emby-ca-certificates.crt:/app/emby/etc/ssl/certs/ca-certificates.crt  #将添加了 伪造CA证书 的信任列表，替换到容器内（emby 的 c# 环境）
       - ./config:/config                                                        #emby 的配置目录
       - ./thumbnails:/mnt/thumbnails                                            #按需配置媒体目录
+      - /dev/dri:/dev/dri                                                       #GPU driver
       - ${VIDEOS}/NSFW:/mnt/NSFW Videos
       - ${MUSIC}/NSFW:/mnt/NSFW Music
       - ${VIDEOS}/Bangumi:/mnt/Bangumi
