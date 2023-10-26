@@ -11,7 +11,7 @@ services:
             - PGID=1000
             - UMASK=022
             - http_proxy=${PROXY}
-          - https_proxy=${PROXY}
-          - all_proxy=${PROXY}
+            - https_proxy=${PROXY}
+            - all_proxy=${PROXY}
         container_name: alist
         image: 'xhofe/alist:latest'
