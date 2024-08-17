@@ -1,12 +1,12 @@
 .env
 
-# TTRSS
+# TTRSS - 阅读器
 ttrss/postgres/data/
 
-# Komga
+# Komga - 漫画
 komga/config
 
-# docker-embyhack
+# docker-embyhack - Emby 私服
 docker-embyhack/.git/
 docker-embyhack/README.md
 docker-embyhack/working.jpg
@@ -19,8 +19,21 @@ docker-embyhack/embyhack/docker-embyhack-ca-certificates.crt
 docker-embyhack/embyhack/emby-ca-certificates.crt
 docker-embyhack/embyhack/nginx.archive
 
-#AList
+# AList - 网盘挂载
 alist/list/
 
-#qbittorrent
+# qbittorrent - 磁链下载
 qbittorrent/config
+
+# AudioNotes
+AudioNotes/modelscope
+AudioNotes/postgresql
+AudioNotes/storage
+
+# jellyfin
+jellyfin/cache
+jellyfin/config
+
+# rsstt
+rsstt/config
+rsstt/log
