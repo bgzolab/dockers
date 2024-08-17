@@ -1,0 +1,38 @@
+version: '3.5'
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:10.9.3
+    container_name: jellyfin
+    user: $PUID:$PGID
+    ports:
+      - 8096:8096
+    #network_mode: 'host'
+    volumes:
+      - ./config:/config
+      - ./cache:/cache
+      - type: bind
+        source: /mnt/c/Users/bGZo/Videos/NSFW
+        target: /NSFWV
+      - type: bind
+        source: /mnt/c/Users/bGZo/Videos/Bangumi
+        target: /Bangumi
+        read_only: true
+      - type: bind
+        source: /mnt/c/Users/bGZo/Videos/Movie
+        target: /Movie
+        read_only: true
+      - type: bind
+        source: /mnt/c/Users/bGZo/Videos/Series
+        target: /Series
+        read_only: true
+      - type: bind
+        source: /mnt/c/Users/bGZo/Music/NSFW
+        target: /NSFWM
+        read_only: true
+    restart: 'unless-stopped'
+    # Optional - alternative address used for autodiscovery
+    #environment:
+    #  - JELLYFIN_PublishedServerUrl=http://example.com
+    # Optional - may be necessary for docker healthcheck to pass if running in host network mode
+    #extra_hosts:
+    #  - 'host.docker.internal:host-gateway'
