@@ -37,3 +37,14 @@ jellyfin/config
 # rsstt
 rsstt/config
 rsstt/log
+
+
+# Postgresql
+postgresql/data/
+
+# Suwayomi
+suwayomi/data/
+
+
+
+
