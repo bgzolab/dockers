@@ -4,7 +4,7 @@ services:
     image: superng6/qbittorrentee
     container_name: qbittorrentee
     environment:
-      - PUID=1000
+      - PUID=911
       - PGID=1000
       - UMASK_SET=0000
       - TZ=Asia/Shanghai

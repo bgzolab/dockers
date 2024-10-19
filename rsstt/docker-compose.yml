@@ -40,8 +40,8 @@ services:
       #- IMAGES_WESERV_NL=https://t0.nl/  # default: https://wsrv.nl/
       - USER_AGENT=Mozilla/5.0 (Android 12; Mobile; rv:68.0) Gecko/68.0 Firefox/96.0  # default: RSStT/2.x RSS Reader
       #- IPV6_PRIOR=1  # default: 0
-      - T_PROXY=socks5://192.168.1.4:7890  # Proxy used to connect to the Telegram API
-      - R_PROXY=socks5://192.168.1.4:7890  # Proxy used to fetch feeds
+      - T_PROXY=${PROXY_SOCKS5}  # Proxy used to connect to the Telegram API
+      - R_PROXY=${PROXY_SOCKS5}  # Proxy used to fetch feeds
       #- PROXY_BYPASS_PRIVATE=1  # default: 0
       #- PROXY_BYPASS_DOMAINS=example.com;example.net
       #- HTTP_TIMEOUT=30  # default: 12
