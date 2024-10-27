@@ -45,6 +45,7 @@ postgresql/data/
 # Suwayomi
 suwayomi/data/
 
-
+# dockge
+dockge/data/
 
 
