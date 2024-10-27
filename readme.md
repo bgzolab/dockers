@@ -3,14 +3,32 @@
 ## Quick Navigation with `192.168.31.20`
 | Port | Name | Desc | Nav |
 | ---- | ---- | -----|-----|
-|  --  | [RSSTT](https://github.com/Rongronggg9/RSS-to-Telegram-Bot) |  A Telegram RSS bot that cares about your reading experience | <img src="https://raw.githubusercontent.com/Rongronggg9/RSS-to-Telegram-Bot/refs/heads/dev/docs/resources/RSStT_icon.svg" height="30px"/> |
-|`5244`| [Alist](https://github.com/alist-org/alist) | A file list/WebDAV program that supports multiple storages, powered by Gin and Solidjs | [<img src="https://camo.githubusercontent.com/bec0bddf2142a503a536f5edb60c830a5a1a24780b9963e6a16192105289d501/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f616c6973742d6f72672f6c6f676f406d61696e2f6c6f676f2e737667" height="30px" />](http://192.168.31.29:5244) |
-|`8096`| [Jellyfin](https://github.com/jellyfin/jellyfin) | The Free Software Media System| [<img src="https://avatars.githubusercontent.com/u/45698031?s=200&v=4" height="30px"/>](http://192.168.31.29:8096) |
-|`7070`| [qBittorent](https://github.com/c0re100/qBittorrent-Enhanced-Edition) | [Unofficial] qBittorrent Enhanced, based on qBittorrent | [<img src="https://avatars.githubusercontent.com/u/2131270?s=200&v=4" height="30px"/>](http://192.168.31.29:7070) |
-|`4567`| [Suwayomi](https://github.com/Suwayomi/docker-tachidesk) |  A rewrite of Tachiyomi for the Desktop | [<img src="https://avatars.githubusercontent.com/u/81182076?s=200&v=4" height="30px"/>](http://192.168.31.29:4567)|
-|`181` | [TTRSS](https://github.com/HenryQW/Awesome-TTRSS) | A PHP and Ajax feed reader | [<img src="https://tt-rss.org/images/icon_classic_128.png" height="30px"/>](http://192.168.31.29:181)|
-|`25600`| [Komga](https://github.com/gotson/komga)|Media server for comics/mangas/BDs/magazines/eBooks with API, OPDS and Kobo Sync support | [<img src="https://raw.githubusercontent.com/gotson/komga/master/.github/readme-images/app-icon.png" height="30px"/>](http://192.168.31.29:25600)|
-|~~`8096`~~| ~~[Emby](https://github.com/fejich/docker-embyhack)~~ |  ~~使用 Docker Compose 编排整合 emby 伪站授权~~ | [<img src="https://emby.media/community/uploads/monthly_2020_06/logoemby.png.6d40431387e2fb250dba418c1c996be6.png" height="30px">](http://192.168.31.29:8096)|
+|  --  | [rsstt](https://github.com/Rongronggg9/RSS-to-Telegram-Bot) |  A Telegram RSS bot that cares about your reading experience | <img src="https://raw.githubusercontent.com/Rongronggg9/RSS-to-Telegram-Bot/refs/heads/dev/docs/resources/RSStT_icon.svg" height="30px"/> |
+|`5001`| [dockge](https://github.com/louislam/dockge)|  A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager  | [<img src="https://raw.githubusercontent.com/louislam/dockge/refs/heads/master/frontend/public/icon.svg" height="30px"/>](http://192.168.31.20:5001) |
+|`5244`| [alist](https://github.com/alist-org/alist) | A file list/WebDAV program that supports multiple storages, powered by Gin and Solidjs | [<img src="https://camo.githubusercontent.com/bec0bddf2142a503a536f5edb60c830a5a1a24780b9963e6a16192105289d501/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f616c6973742d6f72672f6c6f676f406d61696e2f6c6f676f2e737667" height="30px" />](http://192.168.31.20:5244) |
+|`8096`| [jellyfin](https://github.com/jellyfin/jellyfin) | The Free Software Media System| [<img src="https://avatars.githubusercontent.com/u/45698031?s=200&v=4" height="30px"/>](http://192.168.31.20:8096) |
+|`7070`| [qbittorent](https://github.com/c0re100/qBittorrent-Enhanced-Edition) | [Unofficial] qBittorrent Enhanced, based on qBittorrent | [<img src="https://avatars.githubusercontent.com/u/2131270?s=200&v=4" height="30px"/>](http://192.168.31.20:7070) |
+|`4567`| [suwayomi](https://github.com/Suwayomi/docker-tachidesk) |  A rewrite of Tachiyomi for the Desktop | [<img src="https://avatars.githubusercontent.com/u/81182076?s=200&v=4" height="30px"/>](http://192.168.31.20:4567)|
+|`181` | [ttrss](https://github.com/HenryQW/Awesome-TTRSS) | A PHP and Ajax feed reader | [<img src="https://tt-rss.org/images/icon_classic_128.png" height="30px"/>](http://192.168.31.20:181)|
+|`25600`| [komga](https://github.com/gotson/komga)|Media server for comics/mangas/BDs/magazines/eBooks with API, OPDS and Kobo Sync support | [<img src="https://raw.githubusercontent.com/gotson/komga/master/.github/readme-images/app-icon.png" height="30px"/>](http://192.168.31.20:25600)|
+|~~`8096`~~| ~~[emby](https://github.com/fejich/docker-embyhack)~~ |  ~~使用 Docker Compose 编排整合 emby 伪站授权~~ | [<img src="https://emby.media/community/uploads/monthly_2020_06/logoemby.png.6d40431387e2fb250dba418c1c996be6.png" height="30px">](http://192.168.31.20:8096)|
+<!--
+|``| []() |  | [<img src="" height="30px"/>](http://192.168.31.20:) |
+
+TODO:
+- VSCode
+- superng6/bilibili-helper
+- codercom/code-server
+- wrfly/container-web-tty
+- filebrowser/filebrowser
+-->
+
+
+## Waiting list
+- Logesq FR via: https://discuss.logseq.com/t/local-on-server-storage-for-self-hosted-logseq/6613
+  - docker compose via: https://github.com/logseq/logseq/blob/master/docs/docker-web-app-guide.md
+
+
 
 ## Command References
 ```shell
@@ -99,3 +117,7 @@ Emby mount volume drive needs `w` permission, otherwise it not works. So some se
 # Origin permission: drwxr-xr-x
 chmod 777 -R $HOME/Music && chmod 777 -R $HOME/Videos
 ```
+
+## Similar
+- https://github.com/awesome-selfhosted/awesome-selfhosted
+- https://github.com/bboysoulcn/awesome-dockercompose
