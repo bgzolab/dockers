@@ -26,9 +26,10 @@ alist/list/
 qbittorrent/config
 
 # AudioNotes
-AudioNotes/modelscope
-AudioNotes/postgresql
-AudioNotes/storage
+# audionotes/modelscope
+# audionotes/postgresql
+# audionotes/storage
+audionotes/
 
 # jellyfin
 jellyfin/cache
@@ -48,4 +49,16 @@ suwayomi/data/
 # dockge
 dockge/data/
 
+# archive-box
+archive-box/
 
+# code
+code/
+
+# code
+code-server/
+
+#qinglong 
+qinglong/data/
+
+rss-reader/config.json

@@ -11,6 +11,7 @@
 |`4567`| [suwayomi](https://github.com/Suwayomi/docker-tachidesk) |  A rewrite of Tachiyomi for the Desktop | [<img src="https://avatars.githubusercontent.com/u/81182076?s=200&v=4" height="30px"/>](http://192.168.31.20:4567)|
 |`181` | [ttrss](https://github.com/HenryQW/Awesome-TTRSS) | A PHP and Ajax feed reader | [<img src="https://tt-rss.org/images/icon_classic_128.png" height="30px"/>](http://192.168.31.20:181)|
 |`25600`| [komga](https://github.com/gotson/komga)|Media server for comics/mangas/BDs/magazines/eBooks with API, OPDS and Kobo Sync support | [<img src="https://raw.githubusercontent.com/gotson/komga/master/.github/readme-images/app-icon.png" height="30px"/>](http://192.168.31.20:25600)|
+|`1109`| [rss-reader](https://github.com/srcrs/rss-reader)| 一个极简的RSS在线浏览工具 | [<img src="https://raw.githubusercontent.com/srcrs/rss-reader/refs/heads/main/globals/static/favicon.svg" height="30px"/>](http://192.168.31.20:1109)|
 |~~`8096`~~| ~~[emby](https://github.com/fejich/docker-embyhack)~~ |  ~~使用 Docker Compose 编排整合 emby 伪站授权~~ | [<img src="https://emby.media/community/uploads/monthly_2020_06/logoemby.png.6d40431387e2fb250dba418c1c996be6.png" height="30px">](http://192.168.31.20:8096)|
 <!--
 |``| []() |  | [<img src="" height="30px"/>](http://192.168.31.20:) |
@@ -79,7 +80,7 @@ sudo vim /etc/docker/daemon.json
     # https://ustc-edu-cn.mirror.aliyuncs.com
 # systemd environment (ignored)
 sudo mkdir -p /etc/systemd/system/docker.service.d
-sudo echo "[Service]\nEnvironment='HTTP_PROXY=http://127.0.0.1:10800/'\nEnvironment='HTTPS_PROXY=http://127.0.0.1:10800/'\nEnvironment='NO_PROXY=localhost,127.0.0.1,.example.com'" > /etc/systemd/system/docker.service.d/proxy.conf
+sudo echo "[Service]\nEnvironment='HTTP_PROXY=http://192.168.31.20:10800/'\nEnvironment='HTTPS_PROXY=http://192.168.31.20:10800/'\nEnvironment='NO_PROXY=localhost,127.0.0.1,.example.com,192.168.31.20'" > /etc/systemd/system/docker.service.d/proxy.conf
 
 
 # Add current user to docker

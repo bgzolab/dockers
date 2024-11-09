@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  server:
+    image: srcrs/rss-reader:latest
+    container_name: rss-reader
+    restart: always
+    ports:
+      - "1109:8080"
+    volumes:
+      - "$PWD/config.json:/app/config.json"
+    environment:
+      - http_proxy=${PROXY}
+      - https_proxy=${PROXY}
+      - all_proxy=${PROXY}
+      - HTTP_PROXY=${PROXY}
+      - HTTPS_PROXY=${PROXY}
+      - ALL_PROXY=${PROXY}
