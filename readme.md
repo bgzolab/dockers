@@ -4,14 +4,16 @@
 | Port | Name | Desc | Nav |
 | ---- | ---- | -----|-----|
 |  --  | [rsstt](https://github.com/Rongronggg9/RSS-to-Telegram-Bot) |  A Telegram RSS bot that cares about your reading experience | <img src="https://raw.githubusercontent.com/Rongronggg9/RSS-to-Telegram-Bot/refs/heads/dev/docs/resources/RSStT_icon.svg" height="30px"/> |
+|`181` | [ttrss](https://github.com/HenryQW/Awesome-TTRSS) | A PHP and Ajax feed reader | [<img src="https://tt-rss.org/images/icon_classic_128.png" height="30px"/>](http://192.168.31.20:181)|
+|`1109`| [rss-reader](https://github.com/srcrs/rss-reader)| 一个极简的RSS在线浏览工具 | [<img src="https://raw.githubusercontent.com/srcrs/rss-reader/refs/heads/main/globals/static/favicon.svg" height="30px"/>](http://192.168.31.20:1109)|
+|`1234`| [yacd](https://github.com/haishanh/yacd)|   Yet Another Clash Dashboard | [<img src="https://raw.githubusercontent.com/haishanh/yacd/refs/heads/master/assets/yacd-128.png" height="30px"/>](http://192.168.31.20:1234) |
+|`4567`| [suwayomi](https://github.com/Suwayomi/docker-tachidesk) |  A rewrite of Tachiyomi for the Desktop | [<img src="https://avatars.githubusercontent.com/u/81182076?s=200&v=4" height="30px"/>](http://192.168.31.20:4567)|
 |`5001`| [dockge](https://github.com/louislam/dockge)|  A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager  | [<img src="https://raw.githubusercontent.com/louislam/dockge/refs/heads/master/frontend/public/icon.svg" height="30px"/>](http://192.168.31.20:5001) |
 |`5244`| [alist](https://github.com/alist-org/alist) | A file list/WebDAV program that supports multiple storages, powered by Gin and Solidjs | [<img src="https://camo.githubusercontent.com/bec0bddf2142a503a536f5edb60c830a5a1a24780b9963e6a16192105289d501/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f616c6973742d6f72672f6c6f676f406d61696e2f6c6f676f2e737667" height="30px" />](http://192.168.31.20:5244) |
-|`8096`| [jellyfin](https://github.com/jellyfin/jellyfin) | The Free Software Media System| [<img src="https://avatars.githubusercontent.com/u/45698031?s=200&v=4" height="30px"/>](http://192.168.31.20:8096) |
+|`5700`| [qinglong](https://github.com/whyour/qinglong) | Timed task management platform supporting Python3, JavaScript, Shell, Typescript | [<img src="https://user-images.githubusercontent.com/22700758/191449379-f9f56204-0e31-4a16-be5a-331f52696a73.png" height="30px" />](http://192.168.31.20:5700) |
 |`7070`| [qbittorent](https://github.com/c0re100/qBittorrent-Enhanced-Edition) | [Unofficial] qBittorrent Enhanced, based on qBittorrent | [<img src="https://avatars.githubusercontent.com/u/2131270?s=200&v=4" height="30px"/>](http://192.168.31.20:7070) |
-|`4567`| [suwayomi](https://github.com/Suwayomi/docker-tachidesk) |  A rewrite of Tachiyomi for the Desktop | [<img src="https://avatars.githubusercontent.com/u/81182076?s=200&v=4" height="30px"/>](http://192.168.31.20:4567)|
-|`181` | [ttrss](https://github.com/HenryQW/Awesome-TTRSS) | A PHP and Ajax feed reader | [<img src="https://tt-rss.org/images/icon_classic_128.png" height="30px"/>](http://192.168.31.20:181)|
+|`8096`| [jellyfin](https://github.com/jellyfin/jellyfin) | The Free Software Media System| [<img src="https://avatars.githubusercontent.com/u/45698031?s=200&v=4" height="30px"/>](http://192.168.31.20:8096) |
 |`25600`| [komga](https://github.com/gotson/komga)|Media server for comics/mangas/BDs/magazines/eBooks with API, OPDS and Kobo Sync support | [<img src="https://raw.githubusercontent.com/gotson/komga/master/.github/readme-images/app-icon.png" height="30px"/>](http://192.168.31.20:25600)|
-|`1109`| [rss-reader](https://github.com/srcrs/rss-reader)| 一个极简的RSS在线浏览工具 | [<img src="https://raw.githubusercontent.com/srcrs/rss-reader/refs/heads/main/globals/static/favicon.svg" height="30px"/>](http://192.168.31.20:1109)|
 |~~`8096`~~| ~~[emby](https://github.com/fejich/docker-embyhack)~~ |  ~~使用 Docker Compose 编排整合 emby 伪站授权~~ | [<img src="https://emby.media/community/uploads/monthly_2020_06/logoemby.png.6d40431387e2fb250dba418c1c996be6.png" height="30px">](http://192.168.31.20:8096)|
 <!--
 |``| []() |  | [<img src="" height="30px"/>](http://192.168.31.20:) |
@@ -76,6 +78,7 @@ sudo vim /etc/docker/daemon.json
 }
 '''
 # registry-mirrors has died in China...
+# consider https://blog.csdn.net/NTD_huachen/article/details/141858177
     # https://docker.mirrors.ustc.edu.cn
     # https://ustc-edu-cn.mirror.aliyuncs.com
 # systemd environment (ignored)
@@ -120,5 +123,5 @@ chmod 777 -R $HOME/Music && chmod 777 -R $HOME/Videos
 ```
 
 ## Similar
-- https://github.com/awesome-selfhosted/awesome-selfhosted
-- https://github.com/bboysoulcn/awesome-dockercompose
+[![awesome-selfhosted](https://github-readme-stats.vercel.app/api/pin/?username=awesome-selfhosted&repo=awesome-selfhosted&bg_color=00000000)](https://github.com/awesome-selfhosted/awesome-selfhosted)
+[![awesome-dockercompose](https://github-readme-stats.vercel.app/api/pin/?username=bboysoulcn&repo=awesome-dockercompose&bg_color=00000000)](https://github.com/bboysoulcn/awesome-dockercompose)
