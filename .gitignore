@@ -62,3 +62,11 @@ code-server/
 qinglong/data/
 
 rss-reader/config.json
+
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+Gemfile.lock
+docker/
