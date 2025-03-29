@@ -1,0 +1,16 @@
+version: '3'
+services:
+  readeck:
+    image: codeberg.org/readeck/readeck:latest
+    ports:
+      - 1101:8000
+    volumes:
+      - ./readeck-data:/readeck
+    restart: always
+    environment:
+      - http_proxy=${PROXY}
+      - https_proxy=${PROXY}
+      - all_proxy=${PROXY}
+      - HTTP_PROXY=${PROXY}
+      - HTTPS_PROXY=${PROXY}
+      - ALL_PROXY=${PROXY}

@@ -1,0 +1,12 @@
+version: '3'
+services:
+  fusion:
+    image: rook1e404/fusion:latest
+    ports:
+      - '329:8080'
+    environment:
+      - PASSWORD=***REMOVED***
+    restart: "unless-stopped"
+    volumes:
+      # Change `./data` to where you want the files stored
+      - ./data:/data

@@ -1,34 +1,47 @@
 version: '3.5'
 services:
   jellyfin:
-    image: jellyfin/jellyfin:10.9.3
+    image: jellyfin/jellyfin:latest
     container_name: jellyfin
+    # user: $PUID:$PGID
     user: $PUID:$PGID
+    # user: 911:1000
     ports:
       - 8096:8096
     #network_mode: 'host'
+    environment:
+      - http_proxy=${PROXY}
+      - https_proxy=${PROXY}
+      - all_proxy=${PROXY}
+      - HTTP_PROXY=${PROXY}
+      - HTTPS_PROXY=${PROXY}
+      - ALL_PROXY=${PROXY}
     volumes:
       - ./config:/config
       - ./cache:/cache
+      # - type: bind
+        # source: /mnt/c/Users/bGZo/Videos/NSFW
+        # target: /NSFWV
       - type: bind
-        source: /mnt/c/Users/bGZo/Videos/NSFW
-        target: /NSFWV
-      - type: bind
-        source: /mnt/c/Users/bGZo/Videos/Bangumi
+        source: /home/bgzo/Videos/Bangumi
         target: /Bangumi
         read_only: true
       - type: bind
-        source: /mnt/c/Users/bGZo/Videos/Movie
-        target: /Movie
+        source: /mnt/hdd4t/nsfw/video
+        target: /HDD-NSFW-VIDEO
         read_only: true
-      - type: bind
-        source: /mnt/c/Users/bGZo/Videos/Series
-        target: /Series
-        read_only: true
-      - type: bind
-        source: /mnt/c/Users/bGZo/Music/NSFW
-        target: /NSFWM
-        read_only: true
+      # - type: bind
+        # source: /mnt/c/Users/bGZo/Videos/Movie
+        # target: /Movie
+        # read_only: true
+      # - type: bind
+        # source: /mnt/c/Users/bGZo/Videos/Series
+        # target: /Series
+        # read_only: true
+      # - type: bind
+        # source: /mnt/c/Users/bGZo/Music/NSFW
+        # target: /NSFWM
+        # read_only: true
     restart: 'unless-stopped'
     # Optional - alternative address used for autodiscovery
     #environment:

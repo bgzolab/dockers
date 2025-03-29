@@ -61,4 +61,29 @@ code-server/
 #qinglong 
 qinglong/data/
 
+# Rss Reader
 rss-reader/config.json
+
+#Others
+wallabag/data
+motrix/config
+readeck/readeck-data
+motrix/motrix-config
+fusionRss/data
+onedrive/conf
+onedrive/data
+nezha/data
+nezha/app.zip
+nezha/sqlite.db
+
+
+
+# Jekyll Site
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+Gemfile.lock
+docker/
+
