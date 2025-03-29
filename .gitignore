@@ -79,6 +79,8 @@ nezha/sqlite.db
 
 
 # Jekyll Site
+rss-reader/config.json
+
 _site
 .sass-cache
 .jekyll-cache
@@ -86,4 +88,3 @@ _site
 vendor
 Gemfile.lock
 docker/
-

@@ -1,6 +1,7 @@
 # Docker compose selfhost
 
 ## Quick Navigation with `192.168.31.20`
+
 | Port | Name | Desc | Nav |
 | ---- | ---- | -----|-----|
 |  --  | [rsstt](https://github.com/Rongronggg9/RSS-to-Telegram-Bot) |  A Telegram RSS bot that cares about your reading experience | <img src="https://raw.githubusercontent.com/Rongronggg9/RSS-to-Telegram-Bot/refs/heads/dev/docs/resources/RSStT_icon.svg" height="30px"/> |
@@ -15,6 +16,7 @@
 |`8096`| [jellyfin](https://github.com/jellyfin/jellyfin) | The Free Software Media System| [<img src="https://avatars.githubusercontent.com/u/45698031?s=200&v=4" height="30px"/>](http://192.168.31.20:8096) |
 |`25600`| [komga](https://github.com/gotson/komga)|Media server for comics/mangas/BDs/magazines/eBooks with API, OPDS and Kobo Sync support | [<img src="https://raw.githubusercontent.com/gotson/komga/master/.github/readme-images/app-icon.png" height="30px"/>](http://192.168.31.20:25600)|
 |~~`8096`~~| ~~[emby](https://github.com/fejich/docker-embyhack)~~ |  ~~使用 Docker Compose 编排整合 emby 伪站授权~~ | [<img src="https://emby.media/community/uploads/monthly_2020_06/logoemby.png.6d40431387e2fb250dba418c1c996be6.png" height="30px">](http://192.168.31.20:8096)|
+
 <!--
 |``| []() |  | [<img src="" height="30px"/>](http://192.168.31.20:) |
 
@@ -122,6 +124,6 @@ Emby mount volume drive needs `w` permission, otherwise it not works. So some se
 chmod 777 -R $HOME/Music && chmod 777 -R $HOME/Videos
 ```
 
-## Similar
+## Similar Repository
 [![awesome-selfhosted](https://github-readme-stats.vercel.app/api/pin/?username=awesome-selfhosted&repo=awesome-selfhosted&bg_color=00000000)](https://github.com/awesome-selfhosted/awesome-selfhosted)
 [![awesome-dockercompose](https://github-readme-stats.vercel.app/api/pin/?username=bboysoulcn&repo=awesome-dockercompose&bg_color=00000000)](https://github.com/bboysoulcn/awesome-dockercompose)
