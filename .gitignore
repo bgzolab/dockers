@@ -88,3 +88,9 @@ _site
 vendor
 Gemfile.lock
 docker/
+
+# wewe
+wewe-rss/data
+
+# telegram-to-rss
+telegram-to-rss/data
