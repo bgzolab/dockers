@@ -1,3 +1,4 @@
+# via: https://docs.n8n.io/hosting/installation/server-setups/docker-compose/#4-create-an-env-file
 services:
   traefik:
     image: "traefik"
