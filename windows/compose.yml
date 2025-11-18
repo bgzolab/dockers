@@ -1,0 +1,26 @@
+# via: https://github.com/dockur/windows/blob/master/compose.yml≈
+services:
+  windows:
+    image: dockurr/windows
+    container_name: windows
+    environment:
+      VERSION: "11l" # Windows 11 LTSC
+      RAM_SIZE: "8G"
+      CPU_CORES: "4"
+    devices:
+      - /dev/kvm
+      - /dev/net/tun
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8006:8006
+      - 3389:3389/tcp
+      - 3389:3389/udp
+    volumes:
+      - ./windows:/storage
+      - ./shared:/shared/linux
+      - /mnt/win/:/shared/win-old # 旧 Windows
+      # - /dev/nvme0n1p3:/disk2 # 数据盘
+      - /dev/nvme0n1:/disk2 # 数据盘
+    restart: always
+    stop_grace_period: 2m
