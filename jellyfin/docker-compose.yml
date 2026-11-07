@@ -9,13 +9,6 @@ services:
     ports:
       - 8096:8096
     #network_mode: 'host'
-    environment:
-      - http_proxy=${PROXY}
-      - https_proxy=${PROXY}
-      - all_proxy=${PROXY}
-      - HTTP_PROXY=${PROXY}
-      - HTTPS_PROXY=${PROXY}
-      - ALL_PROXY=${PROXY}
     volumes:
       - ./config:/config
       - ./cache:/cache

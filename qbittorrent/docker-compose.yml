@@ -8,9 +8,9 @@ services:
       - PGID=1000
       - UMASK_SET=0000
       - TZ=Asia/Shanghai
-      - http_proxy=${PROXY}
-      - https_proxy=${PROXY}
-      - all_proxy=${PROXY}
+      # - http_proxy=${PROXY}
+      # - https_proxy=${PROXY}
+      # - all_proxy=${PROXY}
 
     volumes:
       - ./config:/config

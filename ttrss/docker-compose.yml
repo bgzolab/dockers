@@ -8,7 +8,7 @@ services:
       - 181:80
     environment:
       - SELF_URL_PATH=http://${LAN}:181/
-      - HTTP_PROXY=${PROXY}
+      # - HTTP_PROXY=${PROXY}
       - DB_PASS=${TTRSS_PASSWORD}
       - PUID=1000
       - PGID=1000

@@ -6,9 +6,9 @@ services:
         environment:
             - ONEDRIVE_UID=${PUID}
             - ONEDRIVE_GID=${PGID}
-            - http_proxy=${PROXY}
-            - https_proxy=${PROXY}
-            - all_proxy=${PROXY}
+            # - http_proxy=${PROXY}
+            # - https_proxy=${PROXY}
+            # - all_proxy=${PROXY}
         volumes: 
             - ./conf:/onedrive/conf
             - ./data:/onedrive/data

@@ -4,12 +4,12 @@ services:
     image: wallabag/wallabag
     restart: unless-stopped
     environment:
-      - http_proxy=${PROXY}
-      - https_proxy=${PROXY}
-      - all_proxy=${PROXY}
-      - HTTP_PROXY=${PROXY}
-      - HTTPS_PROXY=${PROXY}
-      - ALL_PROXY=${PROXY}
+      # - http_proxy=${PROXY}
+      # - https_proxy=${PROXY}
+      # - all_proxy=${PROXY}
+      # - HTTP_PROXY=${PROXY}
+      # - HTTPS_PROXY=${PROXY}
+      # - ALL_PROXY=${PROXY}
       - MYSQL_ROOT_PASSWORD=${WALLABAG_MYSQL_ROOT_PASSWORD}
       - SYMFONY__ENV__DATABASE_DRIVER=pdo_mysql
       - SYMFONY__ENV__DATABASE_HOST=db

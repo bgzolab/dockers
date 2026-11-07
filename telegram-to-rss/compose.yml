@@ -8,9 +8,9 @@ services:
         - TG_API_HASH=${TG_API_HASH}
         - TG_PASSWORD=${TG_PASSWORD}
         - BASE_URL=http://192.168.31.20
-        - http_proxy=http://192.168.31.20:10800
-        - https_proxy=http://192.168.31.20:10800
-        - all_proxy=http://192.168.31.20:10800
+        # - http_proxy=http://192.168.31.20:10800
+        # - https_proxy=http://192.168.31.20:10800
+        # - all_proxy=http://192.168.31.20:10800
       ports:
         - 3042:3042
       volumes:

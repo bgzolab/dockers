@@ -21,9 +21,9 @@ services:
 #
 #      - BIND_IP=0.0.0.0
 #      - BIND_PORT=4567
-      - SOCKS_PROXY_ENABLED=true
-      - SOCKS_PROXY_HOST=${PROXY_HOST}
-      - SOCKS_PROXY_PORT=${PROXY_PORT}
+      # - SOCKS_PROXY_ENABLED=true
+      # - SOCKS_PROXY_HOST=${PROXY_HOST}
+      # - SOCKS_PROXY_PORT=${PROXY_PORT}
 #      - DOWNLOAD_AS_CBZ=true
 #      - BASIC_AUTH_ENABLED=true
 #      - BASIC_AUTH_USERNAME=manga

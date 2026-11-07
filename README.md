@@ -49,7 +49,7 @@ sudo chmod a+r /etc/apt/keyrings/docker.asc
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \\
   $(. /etc/os-release && echo "$UBUNTU_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 cat /etc/apt/sources.list.d/docker.list
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -o Acquire::http::proxy="http://127.0.0.1:10800/"
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 
 # Enable Docker
@@ -84,10 +84,7 @@ sudo vim /etc/docker/daemon.json
 # consider https://blog.csdn.net/NTD_huachen/article/details/141858177
     # https://docker.mirrors.ustc.edu.cn
     # https://ustc-edu-cn.mirror.aliyuncs.com
-# systemd environment (ignored)
-sudo mkdir -p /etc/systemd/system/docker.service.d
-sudo echo "[Service]\nEnvironment='HTTP_PROXY=http://192.168.31.20:10800/'\nEnvironment='HTTPS_PROXY=http://192.168.31.20:10800/'\nEnvironment='NO_PROXY=localhost,127.0.0.1,.example.com,192.168.31.20'" > /etc/systemd/system/docker.service.d/proxy.conf
-
+# systemd environment
 
 # Add current user to docker
 sudo usermod -aG docker ${USER}

@@ -7,10 +7,3 @@ services:
     volumes:
       - ./readeck-data:/readeck
     restart: always
-    environment:
-      - http_proxy=${PROXY}
-      - https_proxy=${PROXY}
-      - all_proxy=${PROXY}
-      - HTTP_PROXY=${PROXY}
-      - HTTPS_PROXY=${PROXY}
-      - ALL_PROXY=${PROXY}
