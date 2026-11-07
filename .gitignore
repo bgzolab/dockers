@@ -50,6 +50,9 @@ suwayomi/data/
 # dockge
 dockge/data/
 
+# gitea
+gitea/data/
+
 # archive-box
 archive-box/
 
