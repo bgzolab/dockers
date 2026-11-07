@@ -37,8 +37,13 @@ TODO:
 
 
 ## Command References
+
+日常的拉镜像、起停容器、看日志都不需要 `sudo`。只有安装 Docker Engine 和修改系统服务需要 root，而且只做一次。
+
+### 一次性系统安装（需要 sudo）
+
 ```shell
-# Install 
+# Install Docker Engine
 # on mint via: https://docs.docker.com/engine/install/ubuntu/
 for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
 sudo apt-get install ca-certificates curl
@@ -48,73 +53,48 @@ sudo chmod a+r /etc/apt/keyrings/docker.asc
 # if on ubuntu it should be VERSION_CODENAME instead of UBUNTU_CODENAME
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \\
   $(. /etc/os-release && echo "$UBUNTU_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-cat /etc/apt/sources.list.d/docker.list
+sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo systemctl enable --now docker
 
+# 把当前用户加入 docker 组，之后执行 docker 不需要 sudo
+sudo usermod -aG docker "$USER"
+# 重新登录，或立即在当前 shell 生效
+newgrp docker
+```
 
-# Enable Docker
-# on wsl1 without systemd
-sudo duckerd
-# On wsl2 / unix
-sudo systemctl start docker
-sudo systemctl enable docker
+> WSL1 没有 systemd 时，用 `sudo dockerd` 手动启动。
 
+### 普通用户操作（无需 sudo）
 
-# Restart docker
-sudo systemctl daemon-reload
-sudo systemctl restart docker
+Compose 文件在各自的服务目录里，共享变量在仓库根目录的 `.env`。
 
-
-# Proxies
-# user (works)
-mkdir -p ~/.docker
-vim ~/.docker/config.json
-# sudo
-sudo vim /etc/docker/daemon.json
-'''
-{
-  "proxies": {
-    "http-proxy": "http://proxy.example.com:3128",
-    "https-proxy": "https://proxy.example.com:3129",
-    "no-proxy": "*.test.example.com,.example.org,127.0.0.0/8"
-  }
-}
-'''
-# registry-mirrors has died in China...
-# consider https://blog.csdn.net/NTD_huachen/article/details/141858177
-    # https://docker.mirrors.ustc.edu.cn
-    # https://ustc-edu-cn.mirror.aliyuncs.com
-# systemd environment
-
-# Add current user to docker
-sudo usermod -aG docker ${USER}
-
-
-# Docker-compose with current user
+```shell
+# Docker Compose 也可以只装在用户目录
 DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
-mkdir -p $DOCKER_CONFIG/cli-plugins
-curl -SL https://github.com/docker/compose/releases/download/v2.27.1/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
-chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
+mkdir -p "$DOCKER_CONFIG/cli-plugins"
+curl -SL https://github.com/docker/compose/releases/download/v2.27.1/docker-compose-linux-x86_64 -o "$DOCKER_CONFIG/cli-plugins/docker-compose"
+chmod +x "$DOCKER_CONFIG/cli-plugins/docker-compose"
 
+# 进入某个服务目录后操作（示例：gitea）
+cd gitea
+docker compose --env-file ../.env up -d      # 启动 / 更新
+docker compose ps                            # 查看状态
+docker compose logs -f                       # 跟踪日志
+docker compose rm                            # 删除已停止的容器
+docker compose down                          # 停止并删除容器
 
-# using environment variables via: https://stackoverflow.com/a/76832150
-# start cotainer 
-docker compose -f ./docker-compose.yml --env-file .env up -d
-# clean container
-docker compose -f ./docker-compose.yml --env-file .env clean
-# remove container
-docker compose -f ./docker-compose.yml --env-file .env rm
-# end container
-docker compose -f ./docker-compose.yml --env-file .env down
+# 也可以从仓库根目录指定 compose 文件
+docker compose -f gitea/docker-compose.yml --env-file .env up -d
 
-
-# look container running
+# 全局查看
 docker ps
-# look containner log
-docker logs
-# docker Info
+docker logs -f gitea
 docker info
 ```
+
+代理统一在路由器处理，各 compose 文件不再注入 `http_proxy`。
+
 > [!NOTE]
 Emby mount volume drive needs `w` permission, otherwise it not works. So some settings are required:
 ```shell
