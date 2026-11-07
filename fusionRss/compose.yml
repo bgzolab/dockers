@@ -5,7 +5,7 @@ services:
     ports:
       - '329:8080'
     environment:
-      - PASSWORD=***REMOVED***
+      - PASSWORD=${FUSION_PASSWORD}
     restart: "unless-stopped"
     volumes:
       # Change `./data` to where you want the files stored

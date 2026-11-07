@@ -1,4 +1,5 @@
 .env
+.env.bak
 
 # TTRSS - 阅读器
 ttrss/postgres/data/

@@ -11,7 +11,7 @@ services:
     environment:
       - LISTEN_PORT=6888
       - RPC_PORT=6800
-      - RPC_SECRET=***REMOVED***
+      - RPC_SECRET=${ARIA2_RPC_SECRET}
       - TZ=Asia/Shanghai
       - PUID=0
       - PGID=0

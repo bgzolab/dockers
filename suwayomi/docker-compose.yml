@@ -27,7 +27,7 @@ services:
 #      - DOWNLOAD_AS_CBZ=true
 #      - BASIC_AUTH_ENABLED=true
 #      - BASIC_AUTH_USERNAME=manga
-#      - BASIC_AUTH_PASSWORD=***REMOVED***
+#      - BASIC_AUTH_PASSWORD=
       - EXTENSION_REPOS=["https://github.com/keiyoushi/extensions"]
     volumes:
       - ./data:/home/suwayomi/.local/share/Tachidesk
