@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Reject staged additions that look like secrets. Bypass: git commit --no-verify
+set -u
+
+patterns='-----BEGIN [A-Z ]*PRIVATE KEY-----'
+patterns+='|(ghp|gho|ghu|ghs|ghr)_[A-Za-z0-9]{20,}'
+patterns+='|github_pat_[A-Za-z0-9_]{20,}'
+patterns+='|AKIA[0-9A-Z]{16}'
+patterns+='|xox[baprs]-[A-Za-z0-9-]{10,}'
+patterns+='|[0-9]{8,10}:[A-Za-z0-9_-]{35}'
+patterns+='|://[^/:@[:space:]]+:[^/@[:space:]]+@'
+patterns+='|(password|passwd|pwd|secret|token|api[_-]?key|apikey|api[_-]?hash|access[_-]?key|private[_-]?key|jwtsecretkey|agentsecretkey)[[:space:]]*[:=][[:space:]]*["'\'']?[^[:space:]"'\''$<][^[:space:]"'\'']*'
+patterns+='|[0-9a-fA-F]{48,}'
+
+placeholders='\$\{|\$[A-Za-z_]|\*\*\*REMOVED\*\*|changeme|change_me|your_|example|placeholder|dummy|sample|xxx|null|false|true|sha256:|sha512:'
+
+fail=0
+while IFS= read -r -d '' file; do
+  added=$(git diff --cached --unified=0 -- "$file" | grep -E '^\+' | grep -Ev '^\+\+\+' || true)
+  [ -z "$added" ] && continue
+  hits=$(printf '%s\n' "$added" | grep -Ei -- "$patterns" | grep -Eiv -- "$placeholders" || true)
+  if [ -n "$hits" ]; then
+    fail=1
+    printf '可能包含密钥: %s\n' "$file" >&2
+    printf '%s\n' "$hits" | sed -E 's/^\+[[:space:]]*//' | sed -E 's/([:=])[[:space:]]*.*/\1 ***/' | sed 's/^/  /' >&2
+  fi
+done < <(git diff --cached --name-only --diff-filter=ACMR -z)
+
+if [ "$fail" -ne 0 ]; then
+  printf '\n检测到疑似密钥，提交已阻止。确认是误报可用 git commit --no-verify。\n' >&2
+  exit 1
+fi

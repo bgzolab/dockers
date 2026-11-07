@@ -124,6 +124,15 @@ Emby mount volume drive needs `w` permission, otherwise it not works. So some se
 chmod 777 -R $HOME/Music && chmod 777 -R $HOME/Videos
 ```
 
+## Git hooks
+
+```shell
+# Enable the secret-scanning pre-commit hook (once per clone)
+git config core.hooksPath .githooks
+```
+
+The hook scans staged additions and blocks likely secrets. Use `git commit --no-verify` only when you are sure it is a false positive.
+
 ## Similar Repository
 [![awesome-selfhosted](https://github-readme-stats.vercel.app/api/pin/?username=awesome-selfhosted&repo=awesome-selfhosted&bg_color=00000000)](https://github.com/awesome-selfhosted/awesome-selfhosted)
 [![awesome-dockercompose](https://github-readme-stats.vercel.app/api/pin/?username=bboysoulcn&repo=awesome-dockercompose&bg_color=00000000)](https://github.com/bboysoulcn/awesome-dockercompose)
