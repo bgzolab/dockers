@@ -1,4 +1,4 @@
-# Docker compose selfhost
+# Docker Compose Files
 
 ## Navigations
 
@@ -48,7 +48,7 @@
 > 不要用 `camelCase` / `PascalCase` / 下划线 / 大写字母。原因：Compose 会把项目名强制转成小写，而 Dockge 按目录名精确匹配（区分大小写）。像 `fusionRss` 这样即使从 Dockge 启动，也会出现 `fusionRss` 和 `fusionrss` 两个条目，其中一个永远显示“不由 Dockge 管理”。
 > - 反例：`fusionRss`；正例：`fusion-rss`、`rss-reader`、`open-webui`。
 
-### Compose 文件头
+### File header
 
 每个 compose 文件的前两行固定为：
 
@@ -94,7 +94,7 @@ services:
 
 > 不要在 `.env` 里给每个服务建端口变量。端口一年改不了几次，上面的表更好查；`.env` 只放密码、路径、主机 IP 这类跨文件共享或需要保密的值。
 
-## All container managed by dockge
+### All container managed by dockge
 
 Dockge 只把 stacks 根目录（容器内 `/opt/stacks`，即本仓库根目录）下、包含 `compose.yml` / `compose.yaml` / `docker-compose.yml` / `docker-compose.yaml` 的一级目录当作自己管理的 stack；[^dockge-judge]
 
@@ -111,11 +111,11 @@ Dockge 只把 stacks 根目录（容器内 `/opt/stacks`，即本仓库根目录
 1. 把 compose 文件放进 `仓库根/<小写项目名>/`，数据用相对路径挂载，然后从 Dockge 启动；
 2. 不再需要的旧项目用 `docker rm -f <容器>` 清掉，`docker compose ls` 里没有它，提示自然消失。
 
-## Command References
+## Command references
 
 日常的拉镜像、起停容器、看日志都不需要 `sudo`。只有安装 Docker Engine 和修改系统服务需要 root，而且只做一次。
 
-### 一次性系统安装（需要 sudo）
+### Install command with sudo
 
 ```shell
 # Install Docker Engine
@@ -140,7 +140,7 @@ newgrp docker
 
 > WSL1 没有 systemd 时，用 `sudo dockerd` 手动启动。
 
-### 普通用户操作（无需 sudo）
+### Common command
 
 Compose 文件在各自的服务目录里，共享变量在仓库根目录的 `.env`。
 
@@ -209,7 +209,7 @@ git config core.hooksPath .githooks
 
 The hook scans staged additions and blocks likely secrets. Use `git commit --no-verify` only when you are sure it is a false positive.
 
-## Similar Repository
+## Similar repositories
 
 1. https://github.com/awesome-selfhosted/awesome-selfhosted
 2. https://github.com/bboysoulcn/awesome-dockercompose
