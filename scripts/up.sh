@@ -7,15 +7,18 @@ cd "$ROOT"
 
 usage() {
   cat <<'EOF'
-Usage: scripts/up.sh <--all | --changed [REF] | STACK...> [--pull] [--dry-run]
+Usage: scripts/up.sh <--all | --changed [REF] | --running | STACK...> [--pull] [--dry-run]
 
-  --all              every stack in the repository
+  --all              every tracked stack
   --changed [REF]    stacks touched since REF (default HEAD; after committing use HEAD~1)
+  --running          only stacks with running/restarting containers; redeploy those services only
   --pull             docker compose pull before up
   --dry-run          print commands without running them
   STACK...           one or more stack directories, e.g. gitea dockge
 
 Examples:
+  scripts/up.sh --running
+  scripts/up.sh --running --dry-run
   scripts/up.sh --changed
   scripts/up.sh --all --dry-run
   scripts/up.sh gitea dockge --pull
@@ -53,6 +56,14 @@ changed_stacks() {
   } | awk -F/ 'NF > 1 { print $1 }' | sort -u
 }
 
+running_services() {
+  local stack=$1 file
+  if ! file=$(compose_file "$stack"); then
+    return 1
+  fi
+  (cd "$stack" && docker compose --env-file "$ROOT/.env" -f "$ROOT/$file" ps --status running --status restarting --services)
+}
+
 run_stack() {
   local stack=$1 file
   if ! file=$(compose_file "$stack"); then
@@ -60,18 +71,34 @@ run_stack() {
     return 1
   fi
 
+  local services=()
+  if [[ "$mode" == running ]]; then
+    mapfile -t services < <(running_services "$stack")
+    if ((${#services[@]} == 0)); then
+      echo "skip $stack (not running)"
+      return 0
+    fi
+  fi
+
   local command=(docker compose --env-file "$ROOT/.env" -f "$ROOT/$file")
+  local pull_command=(pull)
+  local up_command=(up -d --remove-orphans)
+  if ((${#services[@]})); then
+    pull_command=(pull "${services[@]}")
+    up_command=(up -d --no-deps --remove-orphans "${services[@]}")
+  fi
+
   if $dry_run; then
     printf 'cd %q && ' "$stack"
     printf '%q ' "${command[@]}" config -q
     printf '\n'
     if $pull; then
       printf 'cd %q && ' "$stack"
-      printf '%q ' "${command[@]}" pull
+      printf '%q ' "${command[@]}" "${pull_command[@]}"
       printf '\n'
     fi
     printf 'cd %q && ' "$stack"
-    printf '%q ' "${command[@]}" up -d --remove-orphans
+    printf '%q ' "${command[@]}" "${up_command[@]}"
     printf '\n'
     return 0
   fi
@@ -81,9 +108,9 @@ run_stack() {
     return 1
   fi
   if $pull; then
-    (cd "$stack" && "${command[@]}" pull) || return 1
+    (cd "$stack" && "${command[@]}" "${pull_command[@]}") || return 1
   fi
-  (cd "$stack" && "${command[@]}" up -d --remove-orphans)
+  (cd "$stack" && "${command[@]}" "${up_command[@]}")
 }
 
 mode=""
@@ -105,6 +132,10 @@ while (($#)); do
         ref=$1
         shift
       fi
+      ;;
+    --running)
+      mode=running
+      shift
       ;;
     --pull)
       pull=true
@@ -131,12 +162,17 @@ while (($#)); do
 done
 
 if [[ -n "$mode" && ${#targets[@]} -gt 0 ]]; then
-  echo "choose --all, --changed, or explicit stacks, not both" >&2
+  echo "choose --all, --changed, --running, or explicit stacks, not both" >&2
   exit 2
 fi
 
 if [[ ! -f .env ]]; then
   echo "missing $ROOT/.env" >&2
+  exit 2
+fi
+
+if ! command -v docker >/dev/null 2>&1; then
+  echo "docker not found" >&2
   exit 2
 fi
 
@@ -151,6 +187,13 @@ case "$mode" in
     fi
     mapfile -t targets < <(changed_stacks "$ref")
     echo "note: .env changes are not visible to --changed; use --all or name stacks explicitly" >&2
+    ;;
+  running)
+    while IFS= read -r stack; do
+      if [[ -n "$(running_services "$stack")" ]]; then
+        targets+=("$stack")
+      fi
+    done < <(all_stacks)
     ;;
   "")
     if ((${#targets[@]} == 0)); then
