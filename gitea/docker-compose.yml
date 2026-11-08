@@ -8,7 +8,7 @@ services:
       - USER_UID=${PUID:-1000}
       - USER_GID=${PGID:-1000}
       - GITEA__server__DOMAIN=${LAN:-192.168.31.20}
-      - GITEA__server__ROOT_URL=http://${LAN:-192.168.31.20}:3000/
+      - GITEA__server__ROOT_URL=http://${LAN:-192.168.31.20}:8004/
       - GITEA__server__SSH_DOMAIN=${LAN:-192.168.31.20}
       - GITEA__server__SSH_PORT=2222
     volumes:
@@ -16,5 +16,5 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
     ports:
-      - "3000:3000"
+      - "8004:3000"
       - "2222:22"

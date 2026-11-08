@@ -2,7 +2,7 @@ services:
   app:
     image: cooderl/wewe-rss-sqlite:latest
     ports:
-      - 4000:4000
+      - "8019:4000"
     environment:
       # 数据库连接地址
       # - DATABASE_URL=file:../data/wewe-rss.db

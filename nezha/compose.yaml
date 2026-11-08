@@ -6,4 +6,4 @@ services:
     volumes:
       - ./data:/dashboard/data
     ports:
-      - 8008:8008
+      - "8009:8008"

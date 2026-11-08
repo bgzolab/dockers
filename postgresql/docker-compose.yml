@@ -19,11 +19,10 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - ./data:/var/lib/postgresql/data
-    ports:
-      - 5432:5432
+    # 内部依赖：需要宿主机直连工具时再临时加 "5432:5432"
 
   adminer:
     image: adminer
     restart: always
     ports:
-      - 5433:8080
+      - "8011:8080"

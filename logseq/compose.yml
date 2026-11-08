@@ -3,5 +3,5 @@ services:
   logseq-webapp:
     image: ghcr.io/logseq/logseq-webapp:latest
     ports:
-      - 3001:80
+      - "8006:80"
     restart: always

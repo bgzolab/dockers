@@ -3,7 +3,7 @@ services:
   readeck:
     image: codeberg.org/readeck/readeck:latest
     ports:
-      - 1101:8000
+      - "8014:8000"
     volumes:
       - ./readeck-data:/readeck
     restart: always

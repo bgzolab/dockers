@@ -14,11 +14,7 @@ services:
       - SET_PERMISSIONS=false
       - VOLUME_SIZE_LIMIT=0
     restart: unless-stopped
-    ports:
-      - "137:137/udp"
-      - "138:138/udp"
-      - "139:139"
-      - "445:445"
+    # host 网络：SMB 端口直接在宿主机监听
     volumes:
       - ./data:/opt/timemachine
       - ./smbd.service:/etc/avahi/services/smbd.service

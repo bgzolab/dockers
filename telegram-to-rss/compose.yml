@@ -7,12 +7,11 @@ services:
         - TG_API_ID=${TG_API_ID}
         - TG_API_HASH=${TG_API_HASH}
         - TG_PASSWORD=${TG_PASSWORD}
-        - BASE_URL=http://192.168.31.20
+        - BASE_URL=http://${LAN}:3042
         # - http_proxy=http://192.168.31.20:10800
         # - https_proxy=http://192.168.31.20:10800
         # - all_proxy=http://192.168.31.20:10800
-      ports:
-        - 3042:3042
+      # host 网络：端口由应用自己监听，不需要 ports
       volumes:
         - ./data:/data
       network_mode: host

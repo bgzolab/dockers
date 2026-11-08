@@ -18,7 +18,7 @@ services:
       - /etc/localtime:/etc/localtime
 
     ports:
-      - 6881:6881
-      - 6881:6881/udp
-      - 7070:8080
+      - "6881:6881"
+      - "6881:6881/udp"
+      - "8012:8080"
     restart: always

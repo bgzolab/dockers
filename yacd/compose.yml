@@ -3,5 +3,5 @@ services:
   web:
     image: haishanh/yacd:master
     ports:
-      - 1234:80
+      - "8021:80"
     restart: unless-stopped
