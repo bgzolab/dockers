@@ -61,6 +61,7 @@ exclude:
   - readeck/
   - rss-reader/
   - rsstt/
+  - scripts/
   - sunshine/
   - suwayomi/
   - ttrss/

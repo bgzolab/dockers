@@ -27,7 +27,7 @@ docker compose --env-file ../.env logs -f
 - `.env` defines `WORKSPACE`, `DOCUMENTS`, `VIDEOS`, `MUSIC`, `DOWNLOAD`; stacks bind media/config paths from them. Make sure they point at real host paths before deploying (e.g. komga binds `${WORKSPACE}/komga/config`).
 - A few stacks hardcode host-specific paths/hardware: `jellyfin` and `windows` (disks), `motrix` (downloads), `dockge` (`/opt/stacks` → this repo). They only work on this host.
 - Runtime state lives in ignored per-service directories (`data/`, `config/`, `*.db`, sessions). Never commit it.
-- New service directory: add a row to the README table and add the directory to `_config.yml` `exclude:`. Otherwise Jekyll reads the runtime data and can fail on root-owned files.
+- New service directory: add the directory to `_config.yml` `exclude:` and run `python3 scripts/nav.py`; the README row is generated from the compose file.
 
 ## Git hook
 
