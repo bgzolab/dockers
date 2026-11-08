@@ -268,10 +268,13 @@ def main() -> int:
 
     match = re.search(re.escape(BEGIN) + r"\n(.*?)\n" + re.escape(END), text, re.S)
     assert match is not None
+    # Blank lines around the table keep kramdown (GitHub Pages) from parsing the
+    # markers and the table as one paragraph, which renders the table as text.
+    expected = "\n" + block + "\n"
     current_block = match.group(1)
-    if current_block.strip("\n") != block:
+    if current_block != expected:
         README.write_text(
-            text[: match.start(1)] + block + text[match.end(1) :],
+            text[: match.start(1)] + expected + text[match.end(1) :],
             encoding="utf-8",
         )
         print(f"updated {README}")

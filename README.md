@@ -3,6 +3,7 @@
 ## Navigations
 
 <!-- BEGIN NAV -->
+
 | Port | Name | Desc | Nav |
 | ---- | ---- | ---- | ---- |
 | -- | [nvidia](https://github.com/NVIDIA/nvidia-docker) | GPU smoke test |  |
@@ -33,6 +34,7 @@
 | `8020` | [windows](https://github.com/dockur/windows) | Windows 11 VM in Docker | [↗](http://192.168.31.20:8020) |
 | `8021` | [yacd](https://github.com/haishanh/yacd) | Yet Another Clash Dashboard | [↗](http://192.168.31.20:8021) |
 | `8096` | [jellyfin](https://github.com/jellyfin/jellyfin) | The Free Software Media System | [↗](http://192.168.31.20:8096) |
+
 <!-- END NAV -->
 
 
