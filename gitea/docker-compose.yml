@@ -1,3 +1,5 @@
+# Git with a cup of tea, painless self-hosted git service
+# https://github.com/go-gitea/gitea
 services:
   gitea:
     image: gitea/gitea:1

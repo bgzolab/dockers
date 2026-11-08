@@ -1,3 +1,5 @@
+# [Unofficial] qBittorrent Enhanced, based on qBittorrent
+# https://github.com/c0re100/qBittorrent-Enhanced-Edition
 version: "2"
 services:
   qbittorrent:

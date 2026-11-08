@@ -1,3 +1,5 @@
+# 一个极简的RSS在线浏览工具
+# https://github.com/srcrs/rss-reader
 version: "3"
 
 services:

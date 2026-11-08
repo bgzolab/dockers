@@ -1,3 +1,5 @@
+# Workflow automation for technical people
+# https://github.com/n8n-io/n8n
 # via: https://docs.n8n.io/hosting/installation/server-setups/docker-compose/#4-create-an-env-file
 services:
   n8n:

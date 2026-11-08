@@ -1,3 +1,5 @@
+# Windows 11 VM in Docker
+# https://github.com/dockur/windows
 # via: https://github.com/dockur/windows/blob/master/compose.yml≈
 services:
   windows:

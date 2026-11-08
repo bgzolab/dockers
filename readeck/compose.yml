@@ -1,3 +1,5 @@
+# A bookmark manager and read-it-later app
+# https://codeberg.org/readeck/readeck
 version: '3'
 services:
   readeck:

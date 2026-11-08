@@ -1,3 +1,5 @@
+# A local-first, non-linear, outliner notebook
+# https://github.com/logseq/logseq
 version: '3'
 services:
   logseq-webapp:

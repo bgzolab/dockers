@@ -1,3 +1,5 @@
+# User-friendly AI interface for Ollama / OpenAI
+# https://github.com/open-webui/open-webui
 services:
   open-webui:
     build:

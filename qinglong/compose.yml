@@ -1,3 +1,5 @@
+# Timed task management platform supporting Python3, JavaScript, Shell, Typescript
+# https://github.com/whyour/qinglong
 version: '2'
 services:
   web:

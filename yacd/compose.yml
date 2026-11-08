@@ -1,3 +1,5 @@
+# Yet Another Clash Dashboard
+# https://github.com/haishanh/yacd
 version: '2'
 services:
   web:

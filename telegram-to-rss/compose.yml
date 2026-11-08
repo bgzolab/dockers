@@ -1,3 +1,5 @@
+# Telegram channel to RSS
+# https://github.com/aigoncharov/telegram-to-rss
 services:
    telegram-to-rss:
       image: aigoncharov/telegram-to-rss:latest
@@ -22,5 +24,3 @@ volumes:
    data: null
 
 networks: {}
-
-

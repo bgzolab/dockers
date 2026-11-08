@@ -1,3 +1,5 @@
+# A lightweight, self-hosted friendly RSS aggregator and reader
+# https://github.com/0x2E/fusion
 version: '3'
 services:
   fusion:

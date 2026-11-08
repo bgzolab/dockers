@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 """Regenerate the README navigation table from the top-level stack directories.
 
+Each compose file starts with two metadata lines:
+
+    # short description
+    # project URL
+
 Ports come from `docker compose config`, so they cannot drift from the compose
-files. Existing rows keep their name/description/icon; a new stack directory
-gets a default row. Run with --check to verify the table is current without
-writing it.
+files. The table is always rewritten from those two sources; --check verifies
+it without writing.
 """
 
 from __future__ import annotations
@@ -160,15 +164,8 @@ def read_rows(text: str) -> list[list[str]]:
     return rows
 
 
-def build(rows: list[list[str]]) -> tuple[str, list[list[str]], list[str]]:
-    existing: dict[str, list[str]] = {}
+def build() -> tuple[str, list[list[str]], list[str]]:
     problems: list[str] = []
-    for row in rows:
-        key = name_from_cell(row[1]).lower()
-        if key in existing:
-            problems.append(f"duplicate navigation row: {key}")
-        existing[key] = row
-
     lan = lan_ip()
     output: list[list[str]] = []
     seen: dict[int, str] = {}
@@ -182,26 +179,23 @@ def build(rows: list[list[str]]) -> tuple[str, list[list[str]], list[str]]:
                 seen[port] = stack.name
 
         port = pick_port(ports)
-        row = existing.pop(stack.name.lower(), None)
-        if row:
-            row = list(row)
-            old_port = port_from_cell(row[0])
-            row[0] = f"`{port}`" if port is not None else "--"
-            if old_port and port and old_port != port:
-                row[3] = row[3].replace(f":{old_port}", f":{port}")
-            elif old_port is None and port is not None and row[3] in ("", "--"):
-                row[3] = f"[↗](http://{lan}:{port})"
-        else:
-            row = [
-                f"`{port}`" if port is not None else "--",
-                f"[{stack.name}](./{stack.name}/)",
-                "",
-                f"[↗](http://{lan}:{port})" if port is not None else "--",
-            ]
-        output.append(row)
+        desc, url = read_meta(compose_file(stack))
+        if not desc:
+            problems.append(f"{stack.name}: missing description on line 1")
+        if not url:
+            problems.append(f"{stack.name}: missing URL on line 2")
+        elif not re.match(r"https?://", url):
+            problems.append(f"{stack.name}: line 2 is not an http(s) URL: {url!r}")
 
-    for name in existing:
-        problems.append(f"navigation row without a stack directory: {name}")
+        name_cell = f"[{stack.name}]({url})" if url else f"[{stack.name}](./{stack.name}/)"
+        output.append(
+            [
+                f"`{port}`" if port is not None else "--",
+                name_cell,
+                desc.replace("|", r"\|"),
+                f"[↗](http://{lan}:{port})" if port is not None else "",
+            ]
+        )
 
     output.sort(
         key=lambda row: (
@@ -219,8 +213,27 @@ def build(rows: list[list[str]]) -> tuple[str, list[list[str]], list[str]]:
     return "\n".join(lines), output, problems
 
 
-def signature(rows: list[list[str]]) -> list[tuple[str, int | None]]:
-    return [(name_from_cell(row[1]).lower(), port_from_cell(row[0])) for row in rows]
+def read_meta(config: Path | None) -> tuple[str, str]:
+    """First line is the description, second line is the project URL."""
+    if config is None:
+        return "", ""
+    lines = config.read_text(encoding="utf-8").splitlines()
+
+    def field(index: int) -> str:
+        if index >= len(lines):
+            return ""
+        line = lines[index].strip()
+        return line.lstrip("#").strip() if line.startswith("#") else ""
+
+    return field(0), field(1)
+
+
+def signature(rows: list[list[str]]) -> list[tuple[str, ...]]:
+    return [tuple(row) for row in rows]
+
+
+def row_key(row: list[str]) -> tuple[str, int | None]:
+    return (name_from_cell(row[1]).lower(), port_from_cell(row[0]))
 
 
 def main() -> int:
@@ -233,23 +246,23 @@ def main() -> int:
         return 2
 
     text = README.read_text(encoding="utf-8")
-    rows = read_rows(text)
-    block, generated, problems = build(rows)
+    block, generated, problems = build()
 
     for problem in problems:
         print(f"warning: {problem}", file=sys.stderr)
 
     if args.check:
-        current = signature(rows)
-        wanted = signature(generated)
-        if current != wanted:
-            print("navigation is out of date; run: python3 scripts/nav.py", file=sys.stderr)
-            for item in wanted:
-                if item not in current:
-                    print(f"  missing: {item[0]} ({item[1]})", file=sys.stderr)
-            for item in current:
-                if item not in wanted:
-                    print(f"  stale:   {item[0]} ({item[1]})", file=sys.stderr)
+        rows = read_rows(text)
+        if signature(rows) != signature(generated):
+            print("navigation is out of date; run: ./scripts/nav.py", file=sys.stderr)
+            current_keys = {row_key(row) for row in rows}
+            wanted_keys = {row_key(row) for row in generated}
+            for item in sorted(wanted_keys - current_keys, key=str):
+                print(f"  missing: {item[0]} ({item[1]})", file=sys.stderr)
+            for item in sorted(current_keys - wanted_keys, key=str):
+                print(f"  stale:   {item[0]} ({item[1]})", file=sys.stderr)
+            if current_keys == wanted_keys:
+                print("  row content or order changed; run the generator to normalize", file=sys.stderr)
             return 1
         return 1 if problems else 0
 

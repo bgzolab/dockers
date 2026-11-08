@@ -1,3 +1,5 @@
+# WeChat public account RSS generator
+# https://github.com/cooderl/wewe-rss
 services:
   app:
     image: cooderl/wewe-rss-sqlite:latest
