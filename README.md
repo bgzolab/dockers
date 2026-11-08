@@ -1,6 +1,6 @@
 # Docker compose selfhost
 
-## Quick Navigation with `192.168.31.20`
+## Navigation
 
 | Port | Name | Desc | Nav |
 | ---- | ---- | -----|-----|
@@ -20,7 +20,6 @@
 
 <!--
 |``| []() |  | [<img src="" height="30px"/>](http://192.168.31.20:) |
-
 TODO:
 - VSCode
 - superng6/bilibili-helper
@@ -29,12 +28,32 @@ TODO:
 - filebrowser/filebrowser
 -->
 
+## Rules
 
-## Waiting list
-- Logesq FR via: https://discuss.logseq.com/t/local-on-server-storage-for-self-hosted-logseq/6613
-  - docker compose via: https://github.com/logseq/logseq/blob/master/docs/docker-web-app-guide.md
+1. 每个服务一个目录，放在仓库根目录；
+2. 数据统一用相对路径 `./data` 挂载，并把运行时数据加进 `.gitignore`。
+2. 目录名和 Compose 项目名一致，全小写、多词用 `-` 连接（kebab-case）。
 
+> [!NOTE]
+> 不要用 `camelCase` / `PascalCase` / 下划线 / 大写字母。原因：Compose 会把项目名强制转成小写，而 Dockge 按目录名精确匹配（区分大小写）。像 `fusionRss` 这样即使从 Dockge 启动，也会出现 `fusionRss` 和 `fusionrss` 两个条目，其中一个永远显示“不由 Dockge 管理”。
+> - 反例：`fusionRss`；正例：`fusion-rss`、`rss-reader`、`open-webui`。
 
+## All container managed by dockge
+
+Dockge 只把 stacks 根目录（容器内 `/opt/stacks`，即本仓库根目录）下、包含 `compose.yml` / `compose.yaml` / `docker-compose.yml` / `docker-compose.yaml` 的一级目录当作自己管理的 stack；[^dockge-judge]
+
+[^dockge-judge]: 判断逻辑就是 `fs.existsSync(path)`（`backend/stack.ts` 的 `isManagedByDockge`）。同时它用 `docker compose ls --all` 读取宿主机上所有 Compose 项目（包括已退出的）。只在后者出现、没有同名目录的项目就会显示为未管理：只能查看，不能编辑、启停。
+
+常见原因：
+
+1. Compose 文件在仓库外启动（例如 `/opt/...`），容器还在。
+2. 目录已删除或改名，旧容器还在。
+3. 目录名和 Compose 项目名大小写不一致（Compose 项目名强制小写，Dockge 目录名区分大小写）。
+
+处理方式：
+
+1. 把 compose 文件放进 `仓库根/<小写项目名>/`，数据用相对路径挂载，然后从 Dockge 启动；
+2. 不再需要的旧项目用 `docker rm -f <容器>` 清掉，`docker compose ls` 里没有它，提示自然消失。
 
 ## Command References
 
@@ -112,5 +131,7 @@ git config core.hooksPath .githooks
 The hook scans staged additions and blocks likely secrets. Use `git commit --no-verify` only when you are sure it is a false positive.
 
 ## Similar Repository
-[![awesome-selfhosted](https://github-readme-stats.vercel.app/api/pin/?username=awesome-selfhosted&repo=awesome-selfhosted&bg_color=00000000)](https://github.com/awesome-selfhosted/awesome-selfhosted)
-[![awesome-dockercompose](https://github-readme-stats.vercel.app/api/pin/?username=bboysoulcn&repo=awesome-dockercompose&bg_color=00000000)](https://github.com/bboysoulcn/awesome-dockercompose)
+
+1. https://github.com/awesome-selfhosted/awesome-selfhosted
+2. https://github.com/bboysoulcn/awesome-dockercompose
+
