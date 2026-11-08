@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Validate every top-level stack and verify the README navigation is current.
+# Validate every tracked top-level stack and verify the README navigation is current.
 set -uo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -20,8 +20,11 @@ count=0
 shopt -s nullglob
 
 for file in */compose.yml */compose.yaml */docker-compose.yml */docker-compose.yaml; do
-  count=$((count + 1))
   stack=${file%%/*}
+  if command -v git >/dev/null 2>&1 && git check-ignore -q "$stack"; then
+    continue
+  fi
+  count=$((count + 1))
   if (cd "$stack" && docker compose --env-file "$ROOT/.env" -f "$ROOT/$file" config -q); then
     printf 'OK   %s\n' "$stack"
   else

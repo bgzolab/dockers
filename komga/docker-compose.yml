@@ -1,6 +1,5 @@
 # Media server for comics/mangas/BDs/magazines/eBooks with API, OPDS and Kobo Sync support
 # https://github.com/gotson/komga
-version: '3.3'
 services:
   komga:
     image: gotson/komga

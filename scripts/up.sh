@@ -11,7 +11,7 @@ Usage: scripts/up.sh <--all | --changed [REF] | --running | STACK...> [--pull] [
 
   --all              every tracked stack
   --changed [REF]    stacks touched since REF (default HEAD; after committing use HEAD~1)
-  --running          only stacks with running/restarting containers; redeploy those services only
+  --running          only stacks with running containers; redeploy those services only
   --pull             docker compose pull before up
   --dry-run          print commands without running them
   STACK...           one or more stack directories, e.g. gitea dockge
@@ -61,7 +61,7 @@ running_services() {
   if ! file=$(compose_file "$stack"); then
     return 1
   fi
-  (cd "$stack" && docker compose --env-file "$ROOT/.env" -f "$ROOT/$file" ps --status running --status restarting --services)
+  (cd "$stack" && docker compose --env-file "$ROOT/.env" -f "$ROOT/$file" ps --status running --services)
 }
 
 run_stack() {

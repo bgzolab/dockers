@@ -1,6 +1,5 @@
 # Self-hosted read-it-later app
 # https://github.com/wallabag/wallabag
-version: '3'
 services:
   wallabag:
     image: wallabag/wallabag

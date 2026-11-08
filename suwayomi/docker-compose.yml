@@ -2,7 +2,6 @@
 # https://github.com/Suwayomi/docker-tachidesk
 # template via https://raw.githubusercontent.com/Suwayomi/docker-tachidesk/refs/heads/main/docker-compose.yml
 ---
-version: '3.7'
 services:
   suwayomi:
     image: ghcr.io/suwayomi/tachidesk:preview

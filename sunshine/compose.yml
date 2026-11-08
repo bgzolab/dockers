@@ -1,6 +1,5 @@
 # Self-hosted game stream host for Moonlight
 # https://github.com/LizardByte/Sunshine
-version: '3'
 services:
   sunshine:
     image: lizardbyte/sunshine:latest-ubuntu-24.04

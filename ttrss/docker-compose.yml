@@ -1,7 +1,6 @@
 # A PHP and Ajax feed reader
 # https://github.com/HenryQW/Awesome-TTRSS
 # Get via: https://raw.githubusercontent.com/HenryQW/Awesome-TTRSS/main/docker-compose.yml
-version: "3"
 services:
   service.rss:
     image: wangqiru/ttrss:latest

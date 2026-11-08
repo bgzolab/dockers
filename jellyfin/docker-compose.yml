@@ -1,6 +1,5 @@
 # The Free Software Media System
 # https://github.com/jellyfin/jellyfin
-version: '3.5'
 services:
   jellyfin:
     image: jellyfin/jellyfin:latest

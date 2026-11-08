@@ -1,7 +1,6 @@
 # SMB Time Machine backup target for macOS
 # https://github.com/mbentley/docker-timemachine
 # via: https://github.com/mbentley/docker-timemachine
-version: "3.7"
 services:
   timemachine:
     image: mbentley/timemachine:smb
