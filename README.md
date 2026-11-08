@@ -5,18 +5,32 @@
 | Port | Name | Desc | Nav |
 | ---- | ---- | -----|-----|
 |  --  | [rsstt](https://github.com/Rongronggg9/RSS-to-Telegram-Bot) |  A Telegram RSS bot that cares about your reading experience | <img src="https://raw.githubusercontent.com/Rongronggg9/RSS-to-Telegram-Bot/refs/heads/dev/docs/resources/RSStT_icon.svg" height="30px"/> |
-|`181` | [ttrss](https://github.com/HenryQW/Awesome-TTRSS) | A PHP and Ajax feed reader | [<img src="https://tt-rss.org/images/icon_classic_128.png" height="30px"/>](http://192.168.31.20:181)|
-|`1109`| [rss-reader](https://github.com/srcrs/rss-reader)| 一个极简的RSS在线浏览工具 | [<img src="https://raw.githubusercontent.com/srcrs/rss-reader/refs/heads/main/globals/static/favicon.svg" height="30px"/>](http://192.168.31.20:1109)|
-|`1234`| [yacd](https://github.com/haishanh/yacd)|   Yet Another Clash Dashboard | [<img src="https://raw.githubusercontent.com/haishanh/yacd/refs/heads/master/assets/yacd-128.png" height="30px"/>](http://192.168.31.20:1234) |
-|`3000`| [gitea](https://github.com/go-gitea/gitea)| Git with a cup of tea, painless self-hosted git service | [<img src="https://raw.githubusercontent.com/go-gitea/gitea/main/public/assets/img/logo.svg" height="30px"/>](http://192.168.31.20:3000) |
-|`4567`| [suwayomi](https://github.com/Suwayomi/docker-tachidesk) |  A rewrite of Tachiyomi for the Desktop | [<img src="https://avatars.githubusercontent.com/u/81182076?s=200&v=4" height="30px"/>](http://192.168.31.20:4567)|
-|`5001`| [dockge](https://github.com/louislam/dockge)|  A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager  | [<img src="https://raw.githubusercontent.com/louislam/dockge/refs/heads/master/frontend/public/icon.svg" height="30px"/>](http://192.168.31.20:5001) |
-|`5244`| [alist](https://github.com/alist-org/alist) | A file list/WebDAV program that supports multiple storages, powered by Gin and Solidjs | [<img src="https://camo.githubusercontent.com/bec0bddf2142a503a536f5edb60c830a5a1a24780b9963e6a16192105289d501/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f616c6973742d6f72672f6c6f676f406d61696e2f6c6f676f2e737667" height="30px" />](http://192.168.31.20:5244) |
-|`5700`| [qinglong](https://github.com/whyour/qinglong) | Timed task management platform supporting Python3, JavaScript, Shell, Typescript | [<img src="https://user-images.githubusercontent.com/22700758/191449379-f9f56204-0e31-4a16-be5a-331f52696a73.png" height="30px" />](http://192.168.31.20:5700) |
-|`7070`| [qbittorent](https://github.com/c0re100/qBittorrent-Enhanced-Edition) | [Unofficial] qBittorrent Enhanced, based on qBittorrent | [<img src="https://avatars.githubusercontent.com/u/2131270?s=200&v=4" height="30px"/>](http://192.168.31.20:7070) |
+|  --  | [onedrive](https://github.com/abraunegg/onedrive) | OneDrive client for Linux | [↗](https://github.com/abraunegg/onedrive) |
+|  --  | [sunshine](https://github.com/LizardByte/Sunshine) | Self-hosted game stream host for Moonlight | [↗](https://github.com/LizardByte/Sunshine) |
+|  --  | [telegram-to-rss](https://github.com/aigoncharov/telegram-to-rss) | Telegram channel to RSS | [↗](https://github.com/aigoncharov/telegram-to-rss) |
+|  --  | [timemachine](https://github.com/mbentley/docker-timemachine) | SMB Time Machine backup target for macOS | [↗](https://github.com/mbentley/docker-timemachine) |
+|`8001`| [alist](https://github.com/alist-org/alist) | A file list/WebDAV program that supports multiple storages, powered by Gin and Solidjs | [<img src="https://camo.githubusercontent.com/bec0bddf2142a503a536f5edb60c830a5a1a24780b9963e6a16192105289d501/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f616c6973742d6f72672f6c6f676f406d61696e2f6c6f676f2e737667" height="30px" />](http://192.168.31.20:8001) |
+|`8002`| [dockge](https://github.com/louislam/dockge)|  A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager  | [<img src="https://raw.githubusercontent.com/louislam/dockge/refs/heads/master/frontend/public/icon.svg" height="30px"/>](http://192.168.31.20:8002) |
+|`8003`| [fusion-rss](https://github.com/0x2E/fusion) | A lightweight, self-hosted friendly RSS aggregator and reader | [↗](http://192.168.31.20:8003) |
+|`8004`| [gitea](https://github.com/go-gitea/gitea)| Git with a cup of tea, painless self-hosted git service | [<img src="https://raw.githubusercontent.com/go-gitea/gitea/main/public/assets/img/logo.svg" height="30px"/>](http://192.168.31.20:8004) |
+|`8005`| [komga](https://github.com/gotson/komga)|Media server for comics/mangas/BDs/magazines/eBooks with API, OPDS and Kobo Sync support | [<img src="https://raw.githubusercontent.com/gotson/komga/master/.github/readme-images/app-icon.png" height="30px"/>](http://192.168.31.20:8005)|
+|`8006`| [logseq](https://github.com/logseq/logseq) | A local-first, non-linear, outliner notebook | [↗](http://192.168.31.20:8006) |
+|`8007`| [motrix](https://github.com/agalwood/Motrix) | Download manager UI + aria2 | [↗](http://192.168.31.20:8007) |
+|`8008`| [n8n](https://github.com/n8n-io/n8n) | Workflow automation for technical people | [↗](http://192.168.31.20:8008) |
+|`8009`| [nezha](https://github.com/nezhahq/nezha) | Self-hosted server monitoring and status dashboard | [↗](http://192.168.31.20:8009) |
+|`8010`| [open-webui](https://github.com/open-webui/open-webui) | User-friendly AI interface for Ollama / OpenAI | [↗](http://192.168.31.20:8010) |
+|`8011`| [postgresql](https://hub.docker.com/_/postgres) | PostgreSQL + Adminer database playground | [↗](http://192.168.31.20:8011) |
+|`8012`| [qbittorent](https://github.com/c0re100/qBittorrent-Enhanced-Edition) | [Unofficial] qBittorrent Enhanced, based on qBittorrent | [<img src="https://avatars.githubusercontent.com/u/2131270?s=200&v=4" height="30px"/>](http://192.168.31.20:8012) |
+|`8013`| [qinglong](https://github.com/whyour/qinglong) | Timed task management platform supporting Python3, JavaScript, Shell, Typescript | [<img src="https://user-images.githubusercontent.com/22700758/191449379-f9f56204-0e31-4a16-be5a-331f52696a73.png" height="30px" />](http://192.168.31.20:8013) |
+|`8014`| [readeck](https://codeberg.org/readeck/readeck) | A bookmark manager and read-it-later app | [↗](http://192.168.31.20:8014) |
+|`8015`| [rss-reader](https://github.com/srcrs/rss-reader)| 一个极简的RSS在线浏览工具 | [<img src="https://raw.githubusercontent.com/srcrs/rss-reader/refs/heads/main/globals/static/favicon.svg" height="30px"/>](http://192.168.31.20:8015)|
+|`8016`| [suwayomi](https://github.com/Suwayomi/docker-tachidesk) |  A rewrite of Tachiyomi for the Desktop | [<img src="https://avatars.githubusercontent.com/u/81182076?s=200&v=4" height="30px"/>](http://192.168.31.20:8016)|
+|`8017`| [ttrss](https://github.com/HenryQW/Awesome-TTRSS) | A PHP and Ajax feed reader | [<img src="https://tt-rss.org/images/icon_classic_128.png" height="30px"/>](http://192.168.31.20:8017)|
+|`8018`| [wallabag](https://github.com/wallabag/wallabag) | Self-hosted read-it-later app | [↗](http://192.168.31.20:8018) |
+|`8019`| [wewe-rss](https://github.com/cooderl/wewe-rss) | WeChat public account RSS generator | [↗](http://192.168.31.20:8019) |
+|`8020`| [windows](https://github.com/dockur/windows) | Windows 11 VM in Docker | [↗](http://192.168.31.20:8020) |
+|`8021`| [yacd](https://github.com/haishanh/yacd)|   Yet Another Clash Dashboard | [<img src="https://raw.githubusercontent.com/haishanh/yacd/refs/heads/master/assets/yacd-128.png" height="30px"/>](http://192.168.31.20:8021) |
 |`8096`| [jellyfin](https://github.com/jellyfin/jellyfin) | The Free Software Media System| [<img src="https://avatars.githubusercontent.com/u/45698031?s=200&v=4" height="30px"/>](http://192.168.31.20:8096) |
-|`25600`| [komga](https://github.com/gotson/komga)|Media server for comics/mangas/BDs/magazines/eBooks with API, OPDS and Kobo Sync support | [<img src="https://raw.githubusercontent.com/gotson/komga/master/.github/readme-images/app-icon.png" height="30px"/>](http://192.168.31.20:25600)|
-|~~`8096`~~| ~~[emby](https://github.com/fejich/docker-embyhack)~~ |  ~~使用 Docker Compose 编排整合 emby 伪站授权~~ | [<img src="https://emby.media/community/uploads/monthly_2020_06/logoemby.png.6d40431387e2fb250dba418c1c996be6.png" height="30px">](http://192.168.31.20:8096)|
 
 <!--
 |``| []() |  | [<img src="" height="30px"/>](http://192.168.31.20:) |
@@ -32,11 +46,44 @@ TODO:
 
 1. 每个服务一个目录，放在仓库根目录；
 2. 数据统一用相对路径 `./data` 挂载，并把运行时数据加进 `.gitignore`。
-2. 目录名和 Compose 项目名一致，全小写、多词用 `-` 连接（kebab-case）。
+3. 目录名和 Compose 项目名一致，全小写、多词用 `-` 连接（kebab-case）。
 
 > [!NOTE]
 > 不要用 `camelCase` / `PascalCase` / 下划线 / 大写字母。原因：Compose 会把项目名强制转成小写，而 Dockge 按目录名精确匹配（区分大小写）。像 `fusionRss` 这样即使从 Dockge 启动，也会出现 `fusionRss` 和 `fusionrss` 两个条目，其中一个永远显示“不由 Dockge 管理”。
 > - 反例：`fusionRss`；正例：`fusion-rss`、`rss-reader`、`open-webui`。
+
+### 端口分配
+
+宿主机端口分三类，只有第三类需要编号：
+
+1. **协议 / 客户端固定端口**：不改号。
+   - Gitea SSH `2222`
+   - qBittorrent `6881/tcp+udp`、aria2 `6888/tcp+udp`
+   - Sunshine `47984-47990/tcp`、`47998-48000/udp`、`48010`
+   - Time Machine `137/138/139/445`
+   - Windows RDP `3389/tcp+udp`
+   - Jellyfin `8096`（客户端默认端口 + 局域网自动发现）
+2. **内部依赖**：不发布 `ports`，同一个 Compose 网络里直接用服务名访问。
+   - 例：`postgres`、`redis`、`flaresolverr`、ttrss 的 mercury/opencc。
+   - `expose` 只是声明，不是访问控制；不写 `ports` 才是真的不对外。
+   - aria2 RPC `6800` 默认也不发布；确实需要外部 AriaNg 时再临时加回，并确保 `.env` 里的 `ARIA2_RPC_SECRET` 非空。
+3. **Web UI**：统一 `8001-8999`，按上面的 [Navigation](#navigation) 表取号。
+   - 新服务取「当前最大号 + 1」，**不复用已退役的号**，避免旧书签误打到新服务。
+   - 只改宿主机侧：`"80NN:<容器端口>"`，容器内端口不动。
+   - 所有 `ports` 一律加引号；范围和 `/udp` 必须加。
+   - 当前已用 `8001-8021`，下一个 `8022`；`8096` 被 Jellyfin 固定占用，顺延到它时跳过。
+   - Navigation 表就是唯一的端口登记表；改端口时同步改 compose、这张表，以及应用自己的外部 URL。
+
+改端口后要 `docker compose --env-file ../.env up -d` 重建容器，`restart` 不会重新分配端口。需要同步的外部 URL：
+
+| 服务 | 变量 |
+| --- | --- |
+| gitea | `GITEA__server__ROOT_URL` |
+| wallabag | `SYMFONY__ENV__DOMAIN_NAME` |
+| ttrss | `SELF_URL_PATH` |
+| n8n | `WEBHOOK_URL` / `N8N_HOST` |
+
+> 不要在 `.env` 里给每个服务建端口变量。端口一年改不了几次，上面的表更好查；`.env` 只放密码、路径、主机 IP 这类跨文件共享或需要保密的值。
 
 ## All container managed by dockge
 
