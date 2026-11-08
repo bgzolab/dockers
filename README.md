@@ -174,9 +174,9 @@ docker info
 
 | 脚本 | 作用 |
 | --- | --- |
-| `scripts/check.sh` | 校验所有 stack 的 compose 语法；再跑 `nav.py --check`，确认导航表没有过期 |
+| `scripts/check.sh` | 校验所有 tracked stack 的 compose 语法；再跑 `nav.py --check`，确认导航表没有过期 |
 | `scripts/nav.py` | 读取每个 compose 前两行（第 1 行描述、第 2 行 URL）和 compose 端口，强制重写 README 导航表；有 Web 端口才生成 `↗`，无端口 Nav 留空，同时检查宿主机端口重复 |
-| `scripts/up.sh` | 批量 `up -d --remove-orphans`；`--running` 只重部署当前已启动（running/restarting）的 stack，并且只更新其中已启动的 service，停着的不动 |
+| `scripts/up.sh` | 批量 `up -d --remove-orphans`；`--running` 只重部署所有 service 都 running 的 stack，有任何 restarting/stopped 就跳过 |
 
 ```shell
 ./scripts/check.sh                       # 全量校验
@@ -184,8 +184,8 @@ docker info
 ./scripts/nav.py --check                 # 只检查，不写文件
 ./scripts/up.sh --changed                # 只重启本次 git 改动涉及的 stack
 ./scripts/up.sh --changed HEAD~1         # 改动已经提交时，对比上一个提交
-./scripts/up.sh --running                # 只重部署当前已启动（running/restarting）的服务
-./scripts/up.sh --running --dry-run      # 先看会动哪些已启动的服务
+./scripts/up.sh --running                # 只重部署所有 service 都 running 的 stack
+./scripts/up.sh --running --dry-run      # 先看会动哪些完整 running 的 stack
 ./scripts/up.sh --all --dry-run          # 先看要执行哪些命令
 ./scripts/up.sh gitea dockge             # 指定 stack
 ./scripts/up.sh --all --pull             # 先拉镜像再重建
