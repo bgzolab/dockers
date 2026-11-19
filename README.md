@@ -33,6 +33,7 @@
 | `8019` | [wewe-rss](https://github.com/cooderl/wewe-rss) | WeChat public account RSS generator | [↗](http://192.168.31.20:8019) |
 | `8020` | [windows](https://github.com/dockur/windows) | Windows 11 VM in Docker | [↗](http://192.168.31.20:8020) |
 | `8021` | [yacd](https://github.com/haishanh/yacd) | Yet Another Clash Dashboard | [↗](http://192.168.31.20:8021) |
+| `8022` | [douyin-chat-export](https://github.com/TeamBreakerr/douyin-chat-export) | Export Douyin chat history and browse it locally | [↗](http://192.168.31.20:8022) |
 | `8096` | [jellyfin](https://github.com/jellyfin/jellyfin) | The Free Software Media System | [↗](http://192.168.31.20:8096) |
 
 <!-- END NAV -->

@@ -51,6 +51,7 @@ exclude:
   - docker/
   - docker-embyhack/
   - dockge/
+  - douyin-chat-export/
   - jellyfin/
   - komga/
   - logseq/

@@ -1,0 +1,14 @@
+# Export Douyin chat history and browse it locally
+# https://github.com/TeamBreakerr/douyin-chat-export
+services:
+  douyin-chat-export:
+    # ghcr.nju.edu.cn mirror: ghcr.io is slow/unreachable from this host
+    image: ghcr.nju.edu.cn/teambreakerr/douyin-chat-export:latest
+    container_name: douyin-chat-export
+    ports:
+      - "8022:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - TZ=Asia/Shanghai
+    restart: unless-stopped

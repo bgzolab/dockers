@@ -97,6 +97,9 @@ docker/
 # wewe
 wewe-rss/data
 
+# douyin-chat-export
+douyin-chat-export/data
+
 # telegram-to-rss
 telegram-to-rss/data
 
