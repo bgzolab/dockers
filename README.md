@@ -143,6 +143,16 @@ newgrp docker
 
 > WSL1 没有 systemd 时，用 `sudo dockerd` 手动启动。
 
+### Proxy global setting
+
+```
+sudo vim /etc/systemd/system/docker.service.d/proxy.conf
+[Service]
+Environment='HTTP_PROXY=http://192.168.31.20:10800/'
+Environment='HTTPS_PROXY=http://192.168.31.20:10800/'
+Environment='NO_PROXY=localhost,127.0.0.1,.example.com,192.168.31.20'
+```
+
 ### Common command
 
 Compose 文件在各自的服务目录里，共享变量在仓库根目录的 `.env`。
