@@ -11,4 +11,14 @@ services:
       - ./data:/app/data
     environment:
       - TZ=Asia/Shanghai
+      # Docker injects its own (dead) HTTP(S)_PROXY into containers; clear it
+      # so Playwright's Chromium connects directly. Drop these once
+      # /etc/systemd/system/docker.service.d/proxy.conf is cleaned up.
+      - HTTP_PROXY=
+      - HTTPS_PROXY=
+      - http_proxy=
+      - https_proxy=
+      - ALL_PROXY=
+      - all_proxy=
+      - NO_PROXY=*
     restart: unless-stopped
