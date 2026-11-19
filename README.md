@@ -145,12 +145,13 @@ newgrp docker
 
 ### Proxy global setting
 
-```
+```sh
 sudo vim /etc/systemd/system/docker.service.d/proxy.conf
 [Service]
 Environment='HTTP_PROXY=http://192.168.31.20:10800/'
 Environment='HTTPS_PROXY=http://192.168.31.20:10800/'
 Environment='NO_PROXY=localhost,127.0.0.1,.example.com,192.168.31.20'
+sudo systemctl daemon-reload && sudo systemctl restart docker
 ```
 
 ### Common command
